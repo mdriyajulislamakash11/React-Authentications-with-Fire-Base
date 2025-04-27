@@ -1,12 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Header from '../components/Header';
 
 const Root = () => {
     return (
-        <div >
-            {/* Main Layoute */}
-            <h2>main layouts</h2>
+        <div className='mx-auto my-20'>
+
             {/* Header */}
+            <Header />
 
             {/* dynamic route */}
             <Outlet />
