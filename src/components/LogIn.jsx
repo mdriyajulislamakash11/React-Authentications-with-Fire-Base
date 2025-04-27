@@ -3,6 +3,7 @@ import {
   signOut,
   GoogleAuthProvider,
   GithubAuthProvider,
+  FacebookAuthProvider,
 } from "firebase/auth";
 import React, { useState } from "react";
 import auth from "../../firebase.init";
@@ -45,6 +46,17 @@ const LogIn = () => {
       });
   };
 
+  const providerWithFacebook = new FacebookAuthProvider();
+
+  const handleFacebookLogin = () => {
+    signInWithPopup(auth, providerWithFacebook)
+      .then((result) => {
+        console.log(result);
+        setUser(result);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="flex justify-center">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -62,6 +74,8 @@ const LogIn = () => {
               <button onClick={handleGithubLogin} className="btn btn-success">
                 Login With Github
               </button>
+
+              <button onClick={handleFacebookLogin}>Facebook Login</button>
             </>
           )}
 
