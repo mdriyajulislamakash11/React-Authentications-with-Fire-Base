@@ -75,7 +75,7 @@ const LogIn = () => {
                 Login With Github
               </button>
 
-              <button onClick={handleFacebookLogin}>Facebook Login</button>
+              <button className="btn btn-primary" onClick={handleFacebookLogin}>Facebook Login</button>
             </>
           )}
 
