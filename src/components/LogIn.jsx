@@ -52,7 +52,7 @@ const LogIn = () => {
     signInWithPopup(auth, providerWithFacebook)
       .then((result) => {
         console.log(result);
-        setUser(result);
+        setUser(result.user);
       })
       .catch((error) => console.log(error));
   };
